@@ -15,14 +15,14 @@ if ! command -v ufw &> /dev/null; then
 fi
 
 echo "Открытие портов"
-PORTS=(22 23 80 443 444 445 446 447 448 449 450 8443)
+PORTS=(22 23 80 443 444 445 446 447 448 449 450 451 452 453 454 455 456 457 458 459 460 888 8443)
 
 for PORT in "${PORTS[@]}"; do
     echo "Открываем порт: $PORT/tcp"
     ufw allow "$PORT"/tcp
 done
 
-echo "Включение UFw"
+echo "Включение UFW"
 ufw --force enable
 
 echo "Проверка UFW"
